@@ -6,7 +6,7 @@
 namespace fs = std::experimental::filesystem;
 
 int main() {
-	std::string path = "C:/Users/user/Pictures/source/ziye";
+	std::string path = "C:/Users/user/Pictures/source/ziye"; //解压后的文件夹名字
 	for (const auto & entry : fs::directory_iterator(path)) {
 		//std::string filename = entry.path();
 		std::ifstream f(entry.path(), std::ios::binary);
