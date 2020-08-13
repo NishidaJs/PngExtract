@@ -34,10 +34,29 @@ int main() {
 			of.close();
 		}
 		else {
-			f.close();
-			std::cout << "PNG";
-		}
+		if ((c == (char)0x89 && d == (char)0x50)) {
+				std::ofstream of(entry.path().string() + ".png", std::ios::binary);
+				f.seekg(0x20, std::ios::beg);
+				of.put(char(0x89));
+				of.put(char(0x50));
+				of.put(char(0x4E));
+				of.put(char(0x47));
+				of.put(char(0x0D));
+				of.put(char(0x0A));
+				of.put(char(0x1A));
+				of.put(char(0x0A));
+				while (!f.eof()) {
+					char in;
+					f.get(in);
+					of << in;
+				}
+				of.close();
+			}
+			else {
+				f.close();
+				std::cout << "PNG";
+			}
 		std::cout << "";
 	}
 	system("PAUSE");
-}
+	}
