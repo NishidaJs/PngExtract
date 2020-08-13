@@ -59,4 +59,4 @@ int main() {
 		std::cout << "";
 	}
 	system("PAUSE");
-	}
+}
