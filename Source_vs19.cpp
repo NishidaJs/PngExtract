@@ -6,7 +6,7 @@ namespace fs = std::filesystem;
 
 
 int main() {
-	std::string path = "C:/Users/user/Pictures/myrzx_1.6.2_20200803_114829_674dd/assets/codes"; //解压后的文件夹名字
+	std::string path = "C:/Users/user/Pictures/myrzx_1.6.6_20200923_014549_2be7c/assets/codes"; //解压后的文件夹名字
 	for (const auto& entry : fs::directory_iterator(path)) {
 		//std::string filename = entry.path();
 		//std::cout << entry.path() << "\n";
